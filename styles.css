@@ -20,9 +20,9 @@
 body {
     font-family: 'Roboto', Arial, sans-serif;
     background: 
-        linear-gradient(135deg, rgba(244,246,251, 0.94) 0%, rgba(233,234,252, 0.96) 100%),
+        linear-gradient(135deg, rgb(124 132 152 / 0%) 0%, rgba(233,234,252, 0.96) 100%),
         url('811295.png') center center/cover no-repeat fixed;
-    color: #22223b;
+    color: #40405f;
     line-height: 1.7;
     padding: 0;
     min-height: 100vh;
