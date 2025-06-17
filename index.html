@@ -1,90 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="styles.css">
-
     <meta charset="UTF-8">
     <title>About Frederick Brogan</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 40px;
-            background-color: #f4f4f4;
-            color: #333;
+            background: #f0f2f5;
+            font-family: 'Roboto', Arial, sans-serif;
+            color: #222;
+            margin: 0;
         }
-        header, footer {
+        .cv-container {
+            background: #fff;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 40px 32px;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+        }
+        header {
             text-align: center;
+            margin-bottom: 24px;
         }
         h1 {
-            color: #2c3e50;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 2.7rem;
+            color: #1669be;
+            margin-bottom: 0.3em;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
+            font-size: 1.08em;
+            margin-bottom: 12px;
+        }
+        .contact-info a {
+            color: #1669be;
+            text-decoration: none;
+            transition: color .2s;
+        }
+        .contact-info a:hover {
+            color: #23395d;
+            text-decoration: underline;
         }
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 32px;
+        }
+        .section h2 {
+            border-left: 5px solid #1669be;
+            padding-left: 12px;
+            color: #1669be;
+            margin-bottom: 12px;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-size: 1.4em;
+            letter-spacing: 0.5px;
+        }
+        ul {
+            padding-left: 22px;
+        }
+        li {
+            margin-bottom: 6px;
+        }
+        .work-experience h3 {
+            color: #23395d;
+            margin-top: 12px;
+            margin-bottom: 2px;
+            font-size: 1.17em;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.95em;
+        }
+        @media (max-width: 600px) {
+            .cv-container {
+                padding: 16px 4vw;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .section h2 {
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Frederick Brogan</h1>
-        <p>Northolt, Greater London UB5 5PP</p>
-        <p>Email: <a href="mailto:frederickbrogan1892@gmail.com">frederickbrogan1892@gmail.com</a></p>
-        <p>Phone: <a href="tel:+447402106512">+44 7402 106512</a></p>
-    </header>
+    <div class="cv-container">
+        <header>
+            <h1>Frederick Brogan</h1>
+            <div class="contact-info">
+                <span>Northolt, Greater London UB5 5PP</span>
+                <a href="mailto:frederickbrogan1892@gmail.com">frederickbrogan1892@gmail.com</a>
+                <a href="tel:+447402106512">+44 7402 106512</a>
+            </div>
+        </header>
 
-    <main>
-        <div class="section">
-            <h2>About Me</h2>
-            <p>Passionate about technology with a keen eye for innovation and problem-solving. Adept at learning new tools and adapting to the ever-evolving digital landscape. Proven ability to work hard, collaborate effectively, and drive projects to completion with precision and dedication. Successfully completed a leadership course, strengthening abilities in team management, strategic decision-making, and effective communication. Constantly seeking opportunities to expand technical expertise and contribute meaningfully to dynamic teams.</p>
-            <p><strong>Willing to relocate:</strong> Ealing</p>
-        </div>
+        <main>
+            <div class="section">
+                <h2>About Me</h2>
+                <p>
+                    Passionate about technology with a keen eye for innovation and problem-solving.
+                    Adept at learning new tools and adapting to the ever-evolving digital landscape.
+                    Proven ability to work hard, collaborate with teams, and deliver results.
+                </p>
+                <p><strong>Willing to relocate:</strong> Ealing</p>
+            </div>
 
-        <div class="section">
-            <h2>Personal Details</h2>
-            <ul>
-                <li>Driver's License: AM (Mopeds)</li>
-                <li>Eligible to work in the UK: Yes</li>
-                <li>Education Level: GCSE or equivalent</li>
-                <li>Industry Focus: Construction, Electrical Engineering</li>
-                <li>Total Years of Experience: 1</li>
-            </ul>
-        </div>
+            <div class="section">
+                <h2>Personal Details</h2>
+                <ul>
+                    <li>Driver's License: AM (Mopeds)</li>
+                    <li>Eligible to work in the UK: Yes</li>
+                    <li>Education Level: GCSE or equivalent</li>
+                    <li>Industry Focus: Construction, Electrical Engineering</li>
+                    <li>Total Years of Experience: 1</li>
+                </ul>
+            </div>
 
-        <div class="section">
-            <h2>Work Experience</h2>
-            <h3>Small Business Owner – FMB2K9</h3>
-            <p>London, Greater London | May 2020 – Present</p>
+            <div class="section work-experience">
+                <h2>Work Experience</h2>
+                <h3>Small Business Owner – FMB2K9</h3>
+                <p>London, Greater London | May 2020 – Present</p>
 
-            <h3>Apprentice – A.L.F.</h3>
-            <p>Northolt | 2020 – 2023</p>
+                <h3>Apprentice – A.L.F.</h3>
+                <p>Northolt | 2020 – 2023</p>
 
-            <p>Earlier in life, I worked alongside my dad on various side projects, gaining valuable hands-on experience in flooring installation, painting, and waste management.</p>
-        </div>
+                <p>
+                    Earlier in life, I worked alongside my dad on various side projects, gaining valuable hands-on experience
+                    in flooring installation, painting, and waste management.
+                </p>
+            </div>
 
-        <div class="section">
-            <h2>Education</h2>
-            <ul>
-                <li>GCSE in Leadership Skills – Alec Reed Academy, Northolt</li>
-                <li>GCSE in ASDAN Employability – Alec Reed Academy, London</li>
-            </ul>
-        </div>
+            <div class="section">
+                <h2>Education</h2>
+                <ul>
+                    <li>GCSE in Leadership Skills – Alec Reed Academy, Northolt</li>
+                    <li>GCSE in ASDAN Employability – Alec Reed Academy, London</li>
+                </ul>
+            </div>
 
-        <div class="section">
-            <h2>Skills</h2>
-            <ul>
-                <li>Time Management</li>
-                <li>Phone Etiquette</li>
-                <li>Fast Learner</li>
-                <li>Microsoft Office & Excel</li>
-                <li>Communication Skills</li>
-                <li>Organisational Skills</li>
-                <li>Data Entry</li>
-            </ul>
-        </div>
-    </main>
+            <div class="section">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Time Management</li>
+                    <li>Phone Etiquette</li>
+                    <li>Fast Learner</li>
+                    <li>Microsoft Office & Excel</li>
+                    <li>Communication Skills</li>
+                    <li>Organisational Skills</li>
+                    <li>Data Entry</li>
+                </ul>
+            </div>
+        </main>
 
-    <footer>
-        <p>&copy; 2025 Frederick Brogan. All rights reserved.</p>
-    </footer>
+        <footer>
+            <p>&copy; 2025 Frederick Brogan. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
