@@ -17,20 +17,23 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background: linear-gradient(135deg, #f4f6fb 0%, #e9eafc 100%);
+    background: 
+        linear-gradient(135deg, rgba(244,246,251, 0.94) 0%, rgba(233,234,252, 0.96) 100%),
+        url('811295.png') center center/cover no-repeat fixed;
     color: #22223b;
     line-height: 1.7;
     padding: 0;
+    min-height: 100vh;
 }
+
 
 .cv-container {
     max-width: 750px;
     margin: 48px auto;
     padding: 40px 32px;
-    background: #fff;
+    background: rgba(255,255,255,0.88);
     border-radius: 18px;
     box-shadow: 0 8px 36px rgba(45,55,72,0.13);
 }
