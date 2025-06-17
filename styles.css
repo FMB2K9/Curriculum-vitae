@@ -1,3 +1,36 @@
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: none;
+    }
+    to {
+        text-shadow: 0 0 8px #0078D4;
+    }
+}
+
+/* Apply fade-in to sections */
+.section {
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+}
+
+/* Header animation */
+header h1 {
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
 /* Base Reset */
 * {
     margin: 0;
