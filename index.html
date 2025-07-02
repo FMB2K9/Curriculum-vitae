@@ -5,21 +5,40 @@
     <title>About Frederick Brogan</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:400,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
+                <i class="fa-solid fa-user-tie"></i>
+                <span>Frederick Brogan</span>
+            </a>
+        </div>
+        <nav>
+            <a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="products.html"><i class="fa-solid fa-box"></i> Recommended Products</a>
+            <a href="services.html"><i class="fa-solid fa-star"></i> Recommended Services</a>
+        </nav>
+    </header>
+    <div class="background-blur"></div>
     <div class="cv-container">
         <header>
+            <div class="profile-img">
+                <img src="https://ui-avatars.com/api/?name=Frederick+Brogan&background=6f38c5&color=fff&size=128" alt="Frederick Brogan">
+            </div>
             <h1>Frederick Brogan</h1>
             <div class="contact-info">
-                <span>Northolt, Greater London UB5 5PP</span>
-                <a href="mailto:frederickbrogan1892@gmail.com">frederickbrogan1892@gmail.com</a>
-                <a href="tel:+447402106512">+44 7402 106512</a>
+                <span><i class="fa-solid fa-location-dot"></i> Northolt, Greater London UB5 5PP</span>
+                <a href="mailto:frederickbrogan1892@gmail.com"><i class="fa-solid fa-envelope"></i> frederickbrogan1892@gmail.com</a>
+                <a href="tel:+447920565890"><i class="fa-solid fa-phone"></i> +44 7920 565890</a>
             </div>
         </header>
 
         <main>
             <div class="section">
-                <h2>About Me</h2>
+                <h2><i class="fa-solid fa-user"></i> About Me</h2>
                 <p>
                     Passionate about technology with a keen eye for innovation and problem-solving.
                     Adept at learning new tools and adapting to the ever-evolving digital landscape.
@@ -29,7 +48,7 @@
             </div>
 
             <div class="section">
-                <h2>Personal Details</h2>
+                <h2><i class="fa-solid fa-id-card"></i> Personal Details</h2>
                 <ul>
                     <li>Driver's License: AM (Mopeds)</li>
                     <li>Eligible to work in the UK: Yes</li>
@@ -40,7 +59,7 @@
             </div>
 
             <div class="section work-experience">
-                <h2>Work Experience</h2>
+                <h2><i class="fa-solid fa-briefcase"></i> Work Experience</h2>
                 <h3>Small Business Owner – FMB2K9</h3>
                 <p>London, Greater London | May 2020 – Present</p>
 
@@ -54,23 +73,51 @@
             </div>
 
             <div class="section">
-                <h2>Education</h2>
+                <h2><i class="fa-solid fa-graduation-cap"></i> Education</h2>
                 <ul>
                     <li>GCSE in Leadership Skills – Alec Reed Academy, Northolt</li>
-                    <li>GCSE in ASDAN Employability – Alec Reed Academy, London</li>
+                    <li>GCSE in ASDAN Employability – Alec Reed Academy, Northolt</li>
                 </ul>
             </div>
 
             <div class="section">
-                <h2>Skills</h2>
-                <ul>
-                    <li>Time Management</li>
-                    <li>Phone Etiquette</li>
-                    <li>Fast Learner</li>
-                    <li>Microsoft Office & Excel</li>
-                    <li>Communication Skills</li>
-                    <li>Organisational Skills</li>
-                    <li>Data Entry</li>
+                <h2><i class="fa-solid fa-cogs"></i> Skills</h2>
+                <ul class="skills-scale">
+                    <li data-level="7"><span>Time Management</span>
+                        <span class="bar-label left">1</span> 
+                        <span class="bar-container"></span>
+                        <span class="bar-label right">10</span>
+                    </li>
+                    <li data-level="8"><span>Phone Etiquette</span>
+                        <span class="bar-label left">1</span>
+                        <span class="bar-container"></span>
+                        <span class="bar-label right">10</span>
+                    </li>
+                    <li data-level="9"><span>Fast Learner</span>
+                        <span class="bar-label left">1</span>
+                        <span class="bar-container"></span>
+                        <span class="bar-label right">10</span>
+                    </li>
+                    <li data-level="7"><span>Microsoft Office & Excel</span>
+                        <span class="bar-label left">1</span>
+                        <span class="bar-container"></span>
+                        <span class="bar-label right">10</span>
+                    </li>
+                    <li data-level="8"><span>Communication Skills</span>
+                        <span class="bar-label left">1</span>
+                        <span class="bar-container"></span>
+                        <span class="bar-label right">10</span>
+                    </li>
+                    <li data-level="7"><span>Organisational Skills</span>
+                        <span class="bar-label left">1</span>
+                        <span class="bar-container"></span>
+                        <span class="bar-label right">10</span>
+                    </li>
+                    <li data-level="7"><span>Data Entry</span>
+                        <span class="bar-label left">1</span>
+                        <span class="bar-container"></span>
+                        <span class="bar-label right">10</span>
+                    </li>
                 </ul>
             </div>
         </main>
@@ -78,6 +125,29 @@
         <footer>
             <p>&copy; 2025 Frederick Brogan. All rights reserved.</p>
         </footer>
+        <div class="sub-footer">
+            <p>
+                <i class="fa-solid fa-code"></i> Built with ❤️ by Frederick Brogan &mdash; 
+                <a href="mailto:frederickbrogan1892@gmail.com">Contact Me</a>
+            </p>
+        </div>
     </div>
+    <script>
+document.querySelectorAll('.skills-scale li').forEach(li => {
+    const level = Math.max(1, Math.min(10, Number(li.getAttribute('data-level'))));
+    const percent = (level - 1) / 9;
+    const bar = li.querySelector('.bar-container');
+    if (bar) {
+        bar.style.setProperty('--dot-pos', percent);
+        // Remove any previous number
+        bar.innerHTML = '';
+        // Add the number in the middle of the dot
+        const dotNum = document.createElement('span');
+        dotNum.className = 'dot-number';
+        dotNum.textContent = level;
+        bar.appendChild(dotNum);
+    }
+});
+</script>
 </body>
 </html>
