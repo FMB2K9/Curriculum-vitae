@@ -10,41 +10,116 @@
 </head>
 <body>
     <header class="main-header">
-        <div class="logo">
-            <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: inherit;">
-                <i class="fa-solid fa-user-tie"></i>
-                <span>Frederick Brogan</span>
-            </a>
-        </div>
-        <nav>
-            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-            <a href="products.html"><i class="fa-solid fa-box"></i> Recommended Products</a>
-            <a href="services.html" class="active"><i class="fa-solid fa-star"></i> Recommended Services</a>
-            <a href="techsupport.html"><i class="fa-solid fa-screwdriver-wrench"></i> Tech Support</a>
-        </nav>
-    </header>
+    <div class="logo">
+        <a href="index.html" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: inherit;">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>Frederick Brogan</span>
+        </a>
+    </div>
+    <nav>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="products.html"><i class="fa-solid fa-box"></i> Recommended Products</a>
+        <a href="services.html" class="active"><i class="fa-solid fa-star"></i> Recommended Services</a>
+        <a href="techsupport.html"><i class="fa-solid fa-screwdriver-wrench"></i> Tech Support</a>
+        <a href="music.html"><i class="fa-solid fa-music"></i> My Music</a>
+    </nav>
+    <button id="darkModeToggle" title="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+</header>
     <div class="cv-container">
         <h2><i class="fa-solid fa-star"></i> Recommended Services</h2>
-        
-        <div class="service-card">
-            <h3>
-                <i class="fa-solid fa-sim-card"></i>
-                <a href="https://www.awin1.com/cread.php?awinmid=10951&awinaffid=110483&clickref=ispreview.co.uk&ued=https%3A%2F%2Fwww.voxi.co.uk%2Facquisition%2Fplans%3FplanId%3D121296"
-                   target="_blank" rel="noopener" style="all: unset; cursor: pointer; display: inline;">
-                    VOXI UK 80GB 5G Mobile Plan – £10 Monthly
-                </a>
-            </h3>
-            <p>
-                Contract-free mobile operator <strong>VOXI</strong>, the virtual network provider (MVNO) sibling of Vodafone, has launched a new promotion that offers their entry-level £10 per month SIM-Only plan with <strong>80GB</strong> of mobile broadband data (usually 20GB), as well as unlimited access to social media, calls, text and picture messages.
-            </p>
-            <p>
-                The plan, which also supports WiFi Calling, 4G Calling and Visual Voicemail, operates off a 30-day subscription and can also be taken as an eSIM. At the time of writing, VOXI has not set an end date for this 
-                <a href="https://www.awin1.com/cread.php?awinmid=10951&awinaffid=110483&clickref=ispreview.co.uk&ued=https%3A%2F%2Fwww.voxi.co.uk%2Facquisition%2Fplans%3FplanId%3D121296"
-                   target="_blank" rel="noopener" style="font-weight:600;color:var(--primary-dark);text-decoration:none;cursor:pointer;">
-                    80GB special offer
-                </a>.
-            </p>
+        <label for="service-sort-type">Filter by type:</label>
+        <select id="service-sort-type">
+            <option value="all">All</option>
+            <option value="mobile">Mobile</option>
+            <option value="internet">Internet</option>
+            <option value="repair">Repair</option>
+            <!-- Add more types as needed -->
+        </select>
+        <label for="service-sort-order" style="margin-left:16px;">Sort by:</label>
+        <select id="service-sort-order">
+            <option value="default">Default</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+        <option value="type-asc">Type: A-Z</option>
+            <option value="type-desc">Type: Z-A</option>
+        </select>
+        <div id="service-list">
+            <div class="service-card" data-type="mobile" data-name="VOXI UK 80GB 5G Mobile Plan" data-price="10">
+                <h3>
+                    <i class="fa-solid fa-sim-card"></i>
+                    <a href="https://www.awin1.com/cread.php?awinmid=10951&awinaffid=110483&clickref=ispreview.co.uk&ued=https%3A%2F%2Fwww.voxi.co.uk%2Facquisition%2Fplans%3FplanId%3D121296"
+                       target="_blank" rel="noopener" style="all: unset; cursor: pointer; display: inline;">
+                        VOXI UK 80GB 5G Mobile Plan – £10 Monthly
+                    </a>
+                </h3>
+                <p>
+                    Contract-free mobile operator <strong>VOXI</strong>, the virtual network provider (MVNO) sibling of Vodafone, has launched a new promotion that offers their entry-level £10 per month SIM-Only plan with <strong>80GB</strong> of mobile broadband data (usually 20GB), as well as unlimited access to social media, calls, text and picture messages.
+                </p>
+                <p>
+                    The plan, which also supports WiFi Calling, 4G Calling and Visual Voicemail, operates off a 30-day subscription and can also be taken as an eSIM. At the time of writing, VOXI has not set an end date for this 
+                    <a href="https://www.awin1.com/cread.php?awinmid=10951&awinaffid=110483&clickref=ispreview.co.uk&ued=https%3A%2F%2Fwww.voxi.co.uk%2Facquisition%2Fplans%3FplanId%3D121296"
+                       target="_blank" rel="noopener" style="font-weight:600;color:var(--primary-dark);text-decoration:none;cursor:pointer;">
+                        80GB special offer
+                    </a>.
+                </p>
+                <p><strong>£10/month</strong></p>
+            </div>
+            <!-- Add more service cards with data-type, data-name, and data-price -->
         </div>
     </div>
+    <script>
+function renderServices() {
+    const type = document.getElementById('service-sort-type').value;
+    const order = document.getElementById('service-sort-order').value;
+    const list = document.getElementById('service-list');
+    const cards = Array.from(list.querySelectorAll('.service-card'));
+
+    // Filter by type
+    let filtered = cards.filter(card => type === 'all' || card.getAttribute('data-type') === type);
+
+    // Sort
+    if (order === 'price-asc') {
+        filtered.sort((a, b) => Number(a.getAttribute('data-price')) - Number(b.getAttribute('data-price')));
+    } else if (order === 'price-desc') {
+        filtered.sort((a, b) => Number(b.getAttribute('data-price')) - Number(a.getAttribute('data-price')));
+    } else if (order === 'name-asc') {
+        filtered.sort((a, b) => a.getAttribute('data-name').localeCompare(b.getAttribute('data-name')));
+    } else if (order === 'name-desc') {
+        filtered.sort((a, b) => b.getAttribute('data-name').localeCompare(a.getAttribute('data-name')));
+    } else if (order === 'type-asc') {
+        filtered.sort((a, b) => a.getAttribute('data-type').localeCompare(b.getAttribute('data-type')));
+    } else if (order === 'type-desc') {
+        filtered.sort((a, b) => b.getAttribute('data-type').localeCompare(a.getAttribute('data-type')));
+    }
+
+    // Hide all cards
+    cards.forEach(card => card.style.display = 'none');
+    // Show filtered and sorted cards
+    filtered.forEach(card => {
+        card.style.display = '';
+        list.appendChild(card);
+    });
+}
+
+document.getElementById('service-sort-type').addEventListener('change', renderServices);
+document.getElementById('service-sort-order').addEventListener('change', renderServices);
+    </script>
+<script>
+const toggleBtn = document.getElementById('darkModeToggle');
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+if (localStorage.getItem('darkMode') === 'on' || (!localStorage.getItem('darkMode') && prefersDark)) {
+    document.body.classList.add('dark-mode');
+}
+toggleBtn.onclick = function() {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'on');
+    } else {
+        localStorage.setItem('darkMode', 'off');
+    }
+};
+</script>
 </body>
 </html>
