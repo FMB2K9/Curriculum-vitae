@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+    <head>
     <meta charset="UTF-8">
     <title>About Frederick Brogan</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700|Roboto:400,500&display=swap" rel="stylesheet">
@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
+<audio id="startup-sound" preload="auto" onerror="console.error('Audio failed to load.')">
+  <source src="startup.mp3" type="audio/mpeg">
+</audio>
+
 <body>
     <header class="main-header">
         <div class="logo">
@@ -202,6 +206,21 @@ const accentPresets = {
         if (stored) document.documentElement.style.setProperty(key, stored);
     });
 })();
+
+// Play startup sound on first user interaction to comply with browser autoplay policies
+function playOnFirstInteraction() {
+    const audio = document.getElementById('startup-sound');
+    if (audio && audio.paused) {
+        audio.play().catch(error => {
+            // Autoplay was prevented, which is expected on some browsers.
+            console.log("Audio playback failed:", error);
+        });
+    }
+}
+
+document.body.addEventListener('click', playOnFirstInteraction, { once: true });
+document.body.addEventListener('keydown', playOnFirstInteraction, { once: true });
+window.addEventListener('scroll', playOnFirstInteraction, { once: true });
 </script>
 </body>
 </html>
