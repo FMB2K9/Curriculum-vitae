@@ -338,6 +338,15 @@ footer {
     color: var(--accent-dark);
     transition: color 0.2s;
 }
+#muteToggle {
+    margin-left: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5em;
+    color: var(--accent-dark);
+    transition: color 0.2s;
+}
 
 body.dark-mode {
     background: linear-gradient(135deg, #232946 0%, #181c2f 100%);
