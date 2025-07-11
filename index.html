@@ -172,11 +172,7 @@
             }
             toggleBtn.onclick = function() {
                 document.body.classList.toggle('dark-mode');
-                if(document.body.classList.contains('dark-mode')) {
-                    localStorage.setItem('darkMode', 'on');
-                } else {
-                    localStorage.setItem('darkMode', 'off');
-                }
+                localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'on' : 'off');
             };
 
             // Accent color support
@@ -210,16 +206,43 @@
                 });
             })();
 
-            // Play startup sound on first user interaction to comply with browser autoplay policies
+            // Mute button functionality
+            const audio = document.getElementById('startup-sound');
+            const muteBtn = document.getElementById('muteToggle');
+            const muteIcon = muteBtn.querySelector('i');
+
+            // Initialize mute state from localStorage
+            if (localStorage.getItem('muted') === 'true') {
+                audio.muted = true;
+                muteIcon.classList.replace('fa-volume-up', 'fa-volume-off');
+            } else {
+                audio.muted = false;
+                muteIcon.classList.replace('fa-volume-off', 'fa-volume-up');
+            }
+
+            // Toggle mute on button click
+            muteBtn.onclick = function() {
+                audio.muted = !audio.muted;
+                localStorage.setItem('muted', audio.muted);
+                muteIcon.classList.toggle('fa-volume-up', !audio.muted);
+                muteIcon.classList.toggle('fa-volume-off', audio.muted);
+            };
+
+            // Play startup sound on first user interaction, respecting mute setting
             function playOnFirstInteraction() {
-                const audio = document.getElementById('startup-sound');
-                if (audio && audio.paused) {
+                if (audio && audio.paused && !audio.muted) {
                     audio.play().catch(error => {
-                        // Autoplay was prevented, which is expected on some browsers.
                         console.log("Audio playback failed:", error);
                     });
                 }
+                // Remove event listeners after first interaction
+                document.removeEventListener('click', playOnFirstInteraction);
+                document.removeEventListener('keydown', playOnFirstInteraction);
             }
+
+            // Add event listeners for first interaction
+            document.addEventListener('click', playOnFirstInteraction);
+            document.addEventListener('keydown', playOnFirstInteraction);
         </script>
     </body>
 </html>
