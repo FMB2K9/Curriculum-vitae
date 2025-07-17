@@ -531,3 +531,91 @@ body.dark-mode .skills-scale li .bar-container::before {
 .back-button {
     display: inline-block;
 }
+
+/* ADD THIS CSS TO YOUR STYLES.CSS FILE */
+
+/* Product Card Styling */
+#product-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between cards */
+    margin-top: 24px;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px #4f8cff11;
+    padding: 22px 28px;
+    border-left: 5px solid var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: box-shadow 0.2s, border-left-color 0.2s;
+}
+
+.product-card:hover {
+    box-shadow: 0 6px 24px rgba(255,179,71,0.13);
+    border-left-color: var(--section-border-hover);
+}
+
+.product-card-content {
+    flex-grow: 1;
+}
+
+.product-card-content h3 {
+    margin-top: 0;
+    color: var(--primary-dark);
+    font-size: 1.15em;
+    margin-bottom: 8px;
+}
+
+.product-card-content h3 a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.product-card-content h3 a:hover {
+    color: var(--accent-dark);
+    text-decoration: underline;
+}
+
+.product-card-content p {
+    margin-bottom: 4px;
+    color: var(--text-main);
+}
+
+.product-card-content p strong {
+    color: var(--accent-dark);
+    font-size: 1.1em;
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Use contain to avoid squishing the image */
+    border-radius: 8px;
+    background: #fdfdfd; 
+    flex-shrink: 0; /* Prevents the image from shrinking if text is long */
+}
+
+/* Dark mode adjustments for product cards */
+body.dark-mode .product-card {
+    background: #232946;
+    border-left-color: #6f38c5;
+}
+
+body.dark-mode .product-card-content h3,
+body.dark-mode .product-card-content p {
+    color: #e0e6f7;
+}
+
+body.dark-mode .product-card-content h3 a:hover {
+    color: var(--accent);
+}
+
+body.dark-mode .product-card-content p strong {
+    color: var(--accent);
+}
