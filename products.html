@@ -47,28 +47,39 @@
             <option value="name-desc">Name: Z-A</option>
         </select>
         <div id="product-list">
+            <!-- Note: All product cards are updated to a new consistent structure -->
             <div class="product-card" data-type="phone" data-price="899" data-name="iPhone 15">
-                <h3>iPhone 15</h3>
-                <p>Latest Apple smartphone.</p>
-                <p><strong>£899</strong></p>
+                <div class="product-card-content">
+                    <h3><a href="#" target="_blank" rel="noopener noreferrer">iPhone 15</a></h3>
+                    <p>Latest Apple smartphone.</p>
+                    <p><strong>£899</strong></p>
+                </div>
             </div>
             <div class="product-card" data-type="laptop" data-price="1199" data-name="Dell XPS 13">
-                <h3>Dell XPS 13</h3>
-                <p>Lightweight and powerful laptop.</p>
-                <p><strong>£1,199</strong></p>
+                <div class="product-card-content">
+                    <h3><a href="#" target="_blank" rel="noopener noreferrer">Dell XPS 13</a></h3>
+                    <p>Lightweight and powerful laptop.</p>
+                    <p><strong>£1,199</strong></p>
+                </div>
             </div>
             <div class="product-card" data-type="accessory" data-price="39" data-name="Anker Power Bank">
-                <h3>Anker Power Bank</h3>
-                <p>Reliable portable charger.</p>
-                <p><strong>£39</strong></p>
+                <div class="product-card-content">
+                    <h3><a href="#" target="_blank" rel="noopener noreferrer">Anker Power Bank</a></h3>
+                    <p>Reliable portable charger.</p>
+                    <p><strong>£39</strong></p>
+                </div>
             </div>
-            <!-- New Product Card Added Here -->
+            
+            <!-- MODIFIED PRODUCT CARD -->
             <div class="product-card" data-type="accessory" data-price="35" data-name="Anker 20,000mAh Power Bank with USB-C Cable">
-                <h3>Anker 20,000mAh Power Bank</h3>
-                <p>High-capacity charger with a built-in USB-C cable.</p>
-                <p><strong>£34.99</strong></p>
+                <div class="product-card-content">
+                    <h3><a href="https://www.amazon.co.uk/Anker-Portable-Charger-Charging-Battery/dp/B0C9CJKCH3" target="_blank" rel="noopener noreferrer">Anker 20,000mAh Power Bank</a></h3>
+                    <p>High-capacity charger with a built-in USB-C cable.</p>
+                    <p><strong>£34.99</strong></p>
+                </div>
+                <img src="https://m.media-amazon.com/images/I/61uQScwjxvL._AC_SL1500_.jpg" alt="Anker 20,000mAh Power Bank" class="product-image">
             </div>
-            <!-- Add more products with data-type, data-price, and data-name -->
+            
         </div>
     </div>
     <script>
@@ -97,7 +108,7 @@ function renderProducts() {
     
     // Display and append filtered and sorted cards
     filtered.forEach(card => {
-        card.style.display = ''; // Make it visible
+        card.style.display = 'flex'; // Use flex for the card layout
         list.appendChild(card); // Re-append in the correct order
     });
 }
