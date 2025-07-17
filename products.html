@@ -62,6 +62,12 @@
                 <p>Reliable portable charger.</p>
                 <p><strong>£39</strong></p>
             </div>
+            <!-- New Product Card Added Here -->
+            <div class="product-card" data-type="accessory" data-price="35" data-name="Anker 20,000mAh Power Bank with USB-C Cable">
+                <h3>Anker 20,000mAh Power Bank</h3>
+                <p>High-capacity charger with a built-in USB-C cable.</p>
+                <p><strong>£34.99</strong></p>
+            </div>
             <!-- Add more products with data-type, data-price, and data-name -->
         </div>
     </div>
@@ -86,12 +92,13 @@ function renderProducts() {
         filtered.sort((a, b) => b.getAttribute('data-name').localeCompare(a.getAttribute('data-name')));
     }
 
-    // Remove all cards
+    // Hide all cards before re-rendering
     cards.forEach(card => card.style.display = 'none');
-    // Append filtered and sorted cards
+    
+    // Display and append filtered and sorted cards
     filtered.forEach(card => {
-        card.style.display = '';
-        list.appendChild(card);
+        card.style.display = ''; // Make it visible
+        list.appendChild(card); // Re-append in the correct order
     });
 }
 
@@ -142,6 +149,9 @@ const accentPresets = {
         if (stored) document.documentElement.style.setProperty(key, stored);
     });
 })();
+
+// Initial render on page load
+document.addEventListener('DOMContentLoaded', renderProducts);
     </script>
 </body>
 </html>
